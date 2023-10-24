@@ -38,8 +38,8 @@ use serde::{Deserialize, Serialize};
 #[derive(Debug, PartialEq, Eq, Clone)]
 #[cfg_attr(feature = "use_serde", derive(Serialize, Deserialize))]
 pub struct Centroid {
-    mean: OrderedFloat<f64>,
-    weight: OrderedFloat<f64>,
+    pub mean: OrderedFloat<f64>,
+    pub weight: OrderedFloat<f64>,
 }
 
 impl PartialOrd for Centroid {
@@ -97,12 +97,12 @@ impl Default for Centroid {
 #[derive(Debug, PartialEq, Eq, Clone)]
 #[cfg_attr(feature = "use_serde", derive(Serialize, Deserialize))]
 pub struct TDigest {
-    centroids: Vec<Centroid>,
-    max_size: usize,
-    sum: OrderedFloat<f64>,
-    count: OrderedFloat<f64>,
-    max: OrderedFloat<f64>,
-    min: OrderedFloat<f64>,
+    pub centroids: Vec<Centroid>,
+    pub max_size: usize,
+    pub sum: OrderedFloat<f64>,
+    pub count: OrderedFloat<f64>,
+    pub max: OrderedFloat<f64>,
+    pub min: OrderedFloat<f64>,
 }
 
 impl TDigest {
